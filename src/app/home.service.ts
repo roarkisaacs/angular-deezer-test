@@ -10,6 +10,6 @@ export class HomeService {
   constructor(private http: HttpClient) { }
 
   getArtist(): Observable<any> {
-    return this.http.get<any>('https://api.deezer.com/artist/27');
+    return this.http.get<any>('https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/27');
   }
 }
