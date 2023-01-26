@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
             ],
             "scripts": []
           },
@@ -99,42 +100,6 @@
               "src/styles.scss"
             ],
             "scripts": []
-          }
-        }
-      }
-    },
-    "searchbar": {
-      "projectType": "library",
-      "root": "projects/searchbar",
-      "sourceRoot": "projects/searchbar/src",
-      "prefix": "lib",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/searchbar/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/searchbar/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/searchbar/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/searchbar/src/test.ts",
-            "tsConfig": "projects/searchbar/tsconfig.spec.json",
-            "karmaConfig": "projects/searchbar/karma.conf.js"
           }
         }
       }

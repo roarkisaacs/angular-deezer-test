@@ -17,9 +17,6 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "paths": {
-      "searchbar": [
-        "dist/searchbar"
-      ]
     },
     "target": "es2020",
     "module": "es2020",
