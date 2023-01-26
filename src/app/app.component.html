@@ -1,2 +1,13 @@
-<div class="logo"></div>
-<app-search></app-search>
+<ng-container>
+    <!-- Navigation -->
+    <div class="logo"></div>
+    <app-search (searchEvent)="searchResponse($event)"></app-search>
+</ng-container>
+<ng-container *ngIf="artistList; then searchResults; else editorialResults"></ng-container>
+<ng-template #searchResults>
+    <app-search-results [artistList]="artistList"></app-search-results>
+</ng-template>
+<ng-template #editorialResults>
+    <!-- Default Template -->
+    <app-editorial></app-editorial>
+</ng-template>
