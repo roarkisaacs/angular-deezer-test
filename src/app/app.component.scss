@@ -1,8 +1,31 @@
-.logo {
-    background-image: url('../assets/images/logo/deezer_logo.png');
-    width: 112px;
-    height: 27px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin: 1em auto;
+.spacer {
+    flex: 1 1 auto;
 }
+  
+.main-content {
+    padding: 16px;
+    height: 100vh;
+    height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    background-color: #f2f2f2;
+
+    .heading {
+        align-self: flex-start;
+        margin: 0;
+    }
+
+    .content-area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 16px;
+    }
+}
+
+  

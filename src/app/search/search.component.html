@@ -1,7 +1,9 @@
 <div class="search-bar">
     <ng-container *ngIf="displaySearchBar; else searchIcon">
-        <input matInput [(ngModel)]="searchInput" placeholder="Search your favorite artist" (ngModelChange)="searchUpdate.next($event)">
-        <mat-icon fontIcon="close" (click)="clearSearch()"></mat-icon>
+        <mat-form-field>
+            <input matInput [(ngModel)]="searchInput" placeholder="Search your favorite artist" (ngModelChange)="searchUpdate.next($event)">
+            <mat-icon fontIcon="close" (click)="clearSearch()"></mat-icon>
+        </mat-form-field>
     </ng-container>
 </div>
 <ng-template #searchIcon>

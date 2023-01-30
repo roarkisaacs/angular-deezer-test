@@ -1,14 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/theming';
+@import '~ngx-toastr/toastr';
+@include mat-core();
+
+$deezer-app-primary: mat-palette($mat-indigo);
+$deezer-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$deezer-app-warn:    mat-palette($mat-red);
+
+$deezer-app-theme: mat-light-theme($deezer-app-primary, $deezer-app-accent, $deezer-app-warn);
+
+@include angular-material-theme($deezer-app-theme);
 
 html,
 body {
   height: 100%;
+  margin: 0;
 }
 
 body {
-  margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: #000000;
-  color: #ffffff;
 }

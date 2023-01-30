@@ -11,10 +11,15 @@ export class DeezerProxyService {
     constructor(private httpClient: HttpClient) {}
 
     public getArtistByName(searchValue: string): Observable<RootObject> {
-        return this.httpClient.get<RootObject>(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=artist:"${searchValue}"`);
+        // return this.httpClient.get<RootObject>(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=artist:"${searchValue}"`);
+        return this.httpClient.get<RootObject>(`https://api.deezer.com/search?q=${searchValue}&strict=on`)
     }
 
     public getEditorialList(): Observable<RootObject> {
-        return this.httpClient.get<RootObject>(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/editorial/0/charts`);
+        return this.httpClient.get<RootObject>(`https://api.deezer.com/editorial/0/charts`);
+    }
+
+    public queryArtist() {
+        return this.httpClient.get(``)
     }
 }

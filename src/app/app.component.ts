@@ -9,6 +9,7 @@ import { RootObject } from './models/deezer-artist.model';
 export class AppComponent {
   title = 'musicdb-app-angular';
   artistList: RootObject | undefined;
+  showSearchInput = false;
 
   searchResponse(data: RootObject): void {
     console.log(data);

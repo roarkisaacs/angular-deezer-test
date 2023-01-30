@@ -1,5 +1,4 @@
-<ng-container>
-    <!-- Navigation -->
+<!-- <ng-container>
     <div class="logo"></div>
     <app-search (searchEvent)="searchResponse($event)"></app-search>
 </ng-container>
@@ -8,6 +7,22 @@
     <app-search-results [artistList]="artistList"></app-search-results>
 </ng-template>
 <ng-template #editorialResults>
-    <!-- Default Template -->
     <app-editorial></app-editorial>
-</ng-template>
+</ng-template> -->
+
+<mat-toolbar color="primary">
+    <img src="../assets/images/logo/deezer_logo.png" alt="Logo">
+    <span class="spacer"></span>
+    <mat-icon *ngIf="!showSearchInput" (click)="showSearchInput = true">search</mat-icon>
+    <mat-form-field *ngIf="showSearchInput">
+      <input matInput placeholder="Search">
+      <mat-icon matSuffix (click)="showSearchInput = false">close</mat-icon>
+    </mat-form-field>
+</mat-toolbar>
+
+<div class="main-content">
+    <div class="content-area">
+        <h1 class="heading">Top Picks</h1>
+        <app-editorial></app-editorial>
+    </div>
+</div>
