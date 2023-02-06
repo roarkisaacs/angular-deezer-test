@@ -13,9 +13,22 @@ $deezer-app-theme: mat-light-theme($deezer-app-primary, $deezer-app-accent, $dee
 html,
 body {
   height: 100%;
+  width: 100vw;
   margin: 0;
+  background-color: #f0f8ff;
+  overflow-x: hidden;
 }
 
 body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.editorial-card-container {
+  mat-card-header {
+    line-height: 2;
+    justify-content: center;
+  }
+  mat-card-actions {
+    text-align: center;
+  }
 }

@@ -1,14 +1,15 @@
-export interface Artist {
+export interface Podcast {
     id: number;
-    name: string;
+    title: string;
+    description: string;
+    available: boolean;
+    fans: number;
     link: string;
+    share: string;
     picture: string;
     picture_small: string;
     picture_medium: string;
     picture_big: string;
     picture_xl: string;
-    radio: boolean;
-    tracklist: string;
-    position: number;
     type: string;
 }

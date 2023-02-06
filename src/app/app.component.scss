@@ -4,15 +4,11 @@
   
 .main-content {
     padding: 16px;
-    height: 100vh;
-    height: 100dvh;
-    display: grid;
-    grid-template-rows: auto 1fr;
-    background-color: #f2f2f2;
+    height: auto;
+    background: linear-gradient(#d3d3d3, transparent);
 
     .heading {
-        align-self: flex-start;
-        margin: 0;
+        margin: 0.1em auto;
     }
 
     .content-area {
@@ -28,4 +24,23 @@
     }
 }
 
+@media screen and (max-width: 945px) {
+    .main-content {
+        padding: 0;
+
+        .content-area {
+            margin: 1em;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main-content {
+        padding: 0;
+
+        .content-area {
+            margin: 0;
+        }
+    }
+}
   

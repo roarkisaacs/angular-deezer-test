@@ -1,4 +1,6 @@
-export interface Artist {
+import { Album } from "./album.model";
+
+export interface DeezerArtist {
     id: number;
     name: string;
     link: string;
@@ -11,18 +13,7 @@ export interface Artist {
     type: string;
 }
 
-export interface Album {
-    id: number;
-    title: string;
-    cover: string;
-    cover_small: string;
-    cover_medium: string;
-    cover_big: string;
-    cover_xl: string;
-    md5_image: string;
-    tracklist: string;
-    type: string;
-}
+
 
 export interface Datum {
     id: number;
@@ -38,7 +29,7 @@ export interface Datum {
     explicit_content_cover: number;
     preview: string;
     md5_image: string;
-    artist: Artist;
+    artist: DeezerArtist;
     album: Album;
     type: string;
 }
