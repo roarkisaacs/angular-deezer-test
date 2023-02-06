@@ -1,5 +1,5 @@
 <mat-icon *ngIf="!showSearchInput" (click)="showSearchInput = true">search</mat-icon>
-<mat-form-field *ngIf="showSearchInput">
+<mat-form-field *ngIf="showSearchInput" [floatLabel]="'never'">
   <input matInput [(ngModel)]="searchInput" (ngModelChange)="searchUpdate.next($event)" placeholder="Search">
   <mat-icon matSuffix (click)="clearSearch()">close</mat-icon>
 </mat-form-field>

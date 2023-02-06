@@ -13,13 +13,4 @@ import { DeezerProxyService } from '../services/deezer-proxy.service';
 })
 export class SearchResultsComponent {
   @Input('artistList') data: DeezerData<Artist[]> | undefined;
-  response$: Observable<DeezerData<Artist[]>> | undefined;
-
-  constructor(private deezerProxyService: DeezerProxyService) {}
-
-  handlePageEvent(event: PageEvent) {
-    if (this.data?.next)
-      this.response$ = this.deezerProxyService.continueSearchByIndex(this.data!.next);
-  }
-
 }

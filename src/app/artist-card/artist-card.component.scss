@@ -14,5 +14,22 @@ mat-card.artist-card {
         margin-top: 0.2em;
         margin-bottom: 0;
     }
+
+    .card-actions {
+        display: flex;
+        justify-content: space-evenly;
+        line-height: 2.5;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    mat-card.artist-card {
+        max-width: 600px;
+
+        img {
+            height: 500px;
+            width: 500px;
+        }
+    }
 }
    

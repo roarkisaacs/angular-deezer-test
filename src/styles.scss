@@ -23,12 +23,24 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.editorial-card-container {
+.mat-focused .mat-form-field-label {
+  color: blue;
+ }
+
+.artist-card {
   mat-card-header {
     line-height: 2;
     justify-content: center;
   }
+  
   mat-card-actions {
     text-align: center;
+  }
+
+  mat-card-title {
+   text-overflow: ellipsis;
+   overflow: hidden;
+   white-space: nowrap;
+   max-width: 12ch;
   }
 }

@@ -6,9 +6,14 @@
     </mat-card-header>
     <img mat-card-image src="{{artist?.picture_medium}}" alt="{{artist?.name}}">
     <mat-card-actions>
-      <ng-container *ngIf="artist?.nb_fan">
-        <span>{{artist?.nb_fan}}</span>
-      </ng-container>
-      <button mat-button>View</button>
+      <div class="card-actions">
+        <ng-container *ngIf="artist?.nb_fan">
+          <mat-basic-chip>{{artist?.nb_fan}} Fans</mat-basic-chip>
+        </ng-container>
+        <ng-container *ngIf="displayAlbumCount && artist?.nb_album">
+          <mat-basic-chip>{{artist?.nb_album}} Albums</mat-basic-chip>
+        </ng-container>
+        <button mat-button>View</button>
+      </div>
     </mat-card-actions>
 </mat-card>

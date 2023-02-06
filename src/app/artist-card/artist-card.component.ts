@@ -6,7 +6,14 @@ import { Artist } from '../models/artist.model';
   templateUrl: './artist-card.component.html',
   styleUrls: ['./artist-card.component.scss']
 })
-export class ArtistCardComponent {
+export class ArtistCardComponent implements OnInit {
 
   @Input('artist') artist: Artist | undefined;
+  displayAlbumCount: boolean = false;
+
+  ngOnInit(): void {
+    if (window.innerWidth > 1200) {
+      this.displayAlbumCount = true;
+    }
+  }
 }
