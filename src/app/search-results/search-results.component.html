@@ -1,3 +1,13 @@
-<ng-container *ngFor="let artist of data!.data">
-    <app-artist-card [artist]="artist"></app-artist-card>
+<ng-container *ngIf="data">
+    <h1 class="heading">Search Results Total: {{data?.total}}</h1>
+    <div class="search-results-container">
+        <ng-container *ngFor="let artist of data?.data">
+            <app-artist-card [artist]="artist"></app-artist-card>
+        </ng-container>
+    </div>
+    <mat-paginator [length]="data.total"
+                [pageSize]="data.data.length"
+                aria-label="Select page">
+                (page)="handlePageEvent($event)"
+    </mat-paginator>
 </ng-container>

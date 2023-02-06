@@ -1,4 +1,9 @@
-.editorial-card-container {
+.heading {
+    margin: 0.1em auto;
+    text-align: center;
+}
+
+.editorial-container {
     display: flex;
     flex-direction: row;
     flex-grow: 2;

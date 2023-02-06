@@ -17,6 +17,10 @@ export class DeezerProxyService {
         return this.httpClient.get<DeezerData<Artist[]>>(`https://api.deezer.com/search/artist?q=${searchValue}&strict=on`)
     }
 
+    public continueSearchByIndex(url: string): Observable<DeezerData<Artist[]>> {
+        return this.httpClient.get<DeezerData<Artist[]>>(`${url}`)
+    }
+
     public getEditorialList(): Observable<Editorial> {
         if (this.editorialCache) {
             return of(this.editorialCache)

@@ -1,0 +1,13 @@
+.heading {
+    margin: 0.1em auto;
+    text-align: center;
+}
+
+.search-results-container {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 2;
+    flex-wrap: wrap;
+    margin: 1em auto;
+    justify-content: space-evenly;
+}

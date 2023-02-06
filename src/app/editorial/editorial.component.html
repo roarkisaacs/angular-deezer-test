@@ -1,5 +1,6 @@
+<h1 class="heading">Top Picks</h1>
 <ng-container *ngIf="response$ | async as editorial">
-  <div class="editorial-card-container">
+  <div class="editorial-container">
     <ng-container *ngFor="let artist of editorial?.artists?.data?.slice(0, 8)">
       <app-artist-card [artist]="artist"></app-artist-card>
     </ng-container>

@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -46,6 +47,7 @@ import { ArtistCardComponent } from './artist-card/artist-card.component';
     MatCardModule,
     MatToolbarModule,
     MatButtonModule,
+    MatPaginatorModule,
     ToastrModule.forRoot()
   ],
   providers: [
