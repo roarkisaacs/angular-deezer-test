@@ -1,17 +1,7 @@
 <ng-container *ngIf="response$ | async as editorial">
   <div class="editorial-card-container">
-    <ng-container *ngFor="let editorialData of editorial?.artists?.data?.slice(0, 8)">
-      <mat-card class="editorial-card">
-        <mat-card-header>
-          <div mat-card-avatar class="editorial-card-header-image"
-            [style.background-image]="'url(' + editorialData?.picture_small + ')'"></div>
-          <mat-card-title>{{editorialData?.name}}</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src="{{editorialData?.picture_medium}}" alt="{{editorialData?.name}}">
-        <mat-card-actions>
-          <button mat-button>View</button>
-        </mat-card-actions>
-      </mat-card>
+    <ng-container *ngFor="let artist of editorial?.artists?.data?.slice(0, 8)">
+      <app-artist-card [artist]="artist"></app-artist-card>
     </ng-container>
   </div>
 </ng-container>

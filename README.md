@@ -91,3 +91,4 @@ https://raw.githubusercontent.com/DVT/musicdb-app-angular/master/wireframes/arti
 Artist details view [Mobile]
 
 https://raw.githubusercontent.com/DVT/musicdb-app-angular/master/wireframes/artist-details-mobile.PNG
+

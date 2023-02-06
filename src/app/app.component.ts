@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RootObject } from './models/deezer-artist.model';
+import { DeezerData } from './models/deezer-data.model';
+import { Artist } from './models/artist.model';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,9 @@ import { RootObject } from './models/deezer-artist.model';
 })
 export class AppComponent {
   title = 'musicdb-app-angular';
-  artistList: RootObject | undefined;
-  showSearchInput = false;
+  artistList: DeezerData<Artist[]> | undefined;
 
-  searchResponse(data: RootObject): void {
+  searchResponse(data: DeezerData<Artist[]>): void {
     console.log(data);
     this.artistList = data;
   }

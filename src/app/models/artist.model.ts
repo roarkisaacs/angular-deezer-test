@@ -7,8 +7,10 @@ export interface Artist {
     picture_medium: string;
     picture_big: string;
     picture_xl: string;
+    nb_fan?: number;
+    nb_album?: number;
     radio: boolean;
     tracklist: string;
-    position: number;
+    position?: number;
     type: string;
 }

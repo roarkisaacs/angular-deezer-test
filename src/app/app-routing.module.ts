@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: '', component: AppComponent},
   { path: 'artist', component: ArtistComponent },
   { path: 'track', component: TrackComponent },
-  { path: '**', component: AppComponent }
+  { path: '**', component: AppComponent, redirectTo: '' }
 ];
 
 @NgModule({

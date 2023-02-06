@@ -5,7 +5,7 @@ import { Track } from "./track.model";
 import { Playlist } from "./playlist.model";
 import { Artist } from "./artist.model";
 
-export interface EditorialResponse {
+export interface Editorial {
     artists: DeezerData<Artist[]>;
     playlists: DeezerData<Playlist[]>;
     tracks: DeezerData<Track[]>;

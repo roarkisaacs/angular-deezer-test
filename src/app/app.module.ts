@@ -19,8 +19,9 @@ import { ArtistComponent } from './artist/artist.component';
 import { TrackComponent } from './track/track.component';
 import { EditorialComponent } from './editorial/editorial.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
-import { InterceptorService } from './interceptor/interceptor.service';
-import { ErrorHandlerService } from './error-handler/error-handler.service';
+import { InterceptorService } from './services/interceptor/interceptor.service';
+import { ErrorHandlerService } from './services/error-handler/error-handler.service';
+import { ArtistCardComponent } from './artist-card/artist-card.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ErrorHandlerService } from './error-handler/error-handler.service';
     ArtistComponent,
     TrackComponent,
     EditorialComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    ArtistCardComponent
   ],
   imports: [
     CommonModule,

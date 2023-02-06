@@ -1,7 +1,8 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { debounceTime, distinctUntilChanged, filter, Subject, switchMap } from 'rxjs';
-import { RootObject } from '../models/deezer-artist.model';
 import { DeezerProxyService } from '../services/deezer-proxy.service';
+import { DeezerData } from '../models/deezer-data.model';
+import { Artist } from '../models/artist.model';
 
 @Component({
   selector: 'app-search',
@@ -10,10 +11,11 @@ import { DeezerProxyService } from '../services/deezer-proxy.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchComponent implements OnInit, OnDestroy {
-  @Output() searchEvent = new EventEmitter<RootObject>();
+  @Output() searchEvent = new EventEmitter<DeezerData<Artist[]>>();
   public searchUpdate = new Subject<string>();
   public searchInput = '';
   public displaySearchBar: boolean = false;
+  showSearchInput = false;
 
   constructor(private deezerProxyService: DeezerProxyService) {}
 
@@ -26,9 +28,9 @@ export class SearchComponent implements OnInit, OnDestroy {
       filter((searchValue:string) => searchValue.length > 2),
       debounceTime(500),
       distinctUntilChanged(),
-      switchMap((searchValue: string) => this.deezerProxyService.getArtistByName(searchValue))
+      switchMap((searchValue: string) => this.deezerProxyService.querySearchTermByArtistName(searchValue))
     ).subscribe(
-      (response: RootObject) => this.searchEvent.emit(response)
+      (response: DeezerData<Artist[]>) => this.searchEvent.emit(response)
     );
   }
 
@@ -38,6 +40,7 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   public clearSearch(): void {
     this.searchInput = '';
+    this.showSearchInput = false;
     this.toggleSearch();
     this.searchEvent.emit();
   }

@@ -1,11 +1,5 @@
-<div class="search-bar">
-    <ng-container *ngIf="displaySearchBar; else searchIcon">
-        <mat-form-field>
-            <input matInput [(ngModel)]="searchInput" placeholder="Search your favorite artist" (ngModelChange)="searchUpdate.next($event)">
-            <mat-icon fontIcon="close" (click)="clearSearch()"></mat-icon>
-        </mat-form-field>
-    </ng-container>
-</div>
-<ng-template #searchIcon>
-    <mat-icon fontIcon="search" (click)="toggleSearch()"></mat-icon>
-</ng-template>
+<mat-icon *ngIf="!showSearchInput" (click)="showSearchInput = true">search</mat-icon>
+<mat-form-field *ngIf="showSearchInput">
+  <input matInput [(ngModel)]="searchInput" (ngModelChange)="searchUpdate.next($event)" placeholder="Search">
+  <mat-icon matSuffix (click)="clearSearch()">close</mat-icon>
+</mat-form-field>

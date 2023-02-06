@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DeezerProxyService } from '../services/deezer-proxy.service';
-import { EditorialResponse } from '../models/editorial.model';
+import { Editorial } from '../models/editorial.model';
 
 @Component({
   selector: 'app-editorial',
@@ -12,7 +12,7 @@ import { EditorialResponse } from '../models/editorial.model';
 export class EditorialComponent implements OnInit {
 
   constructor(private deezerProxyService: DeezerProxyService) { }
-  public response$: Observable<EditorialResponse> | undefined;
+  public response$: Observable<Editorial> | undefined;
 
   ngOnInit(): void {
     this.response$ = this.deezerProxyService.getEditorialList();
