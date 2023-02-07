@@ -13,7 +13,7 @@
         <ng-container *ngIf="displayAlbumCount && artist?.nb_album">
           <mat-basic-chip>{{artist?.nb_album}} Albums</mat-basic-chip>
         </ng-container>
-        <button mat-button>View</button>
+        <button mat-button (click)="viewArtist(artist!.id)">View</button>
       </div>
     </mat-card-actions>
 </mat-card>

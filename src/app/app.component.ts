@@ -15,4 +15,6 @@ export class AppComponent {
     console.log(data);
     this.artistList = data;
   }
+
+  redirectHome(): void {}
 }

@@ -18,7 +18,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { ArtistComponent } from './artist/artist.component';
-import { TrackComponent } from './track/track.component';
 import { EditorialComponent } from './editorial/editorial.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { InterceptorService } from './services/interceptor/interceptor.service';
@@ -30,7 +29,6 @@ import { ArtistCardComponent } from './artist-card/artist-card.component';
     AppComponent,
     SearchComponent,
     ArtistComponent,
-    TrackComponent,
     EditorialComponent,
     SearchResultsComponent,
     ArtistCardComponent
