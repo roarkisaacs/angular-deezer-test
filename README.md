@@ -1,10 +1,6 @@
 # Deezer Angular Application
 
-### This is a basic project - Deezer Application. 
-<br/>
-
-> This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.6.
-
+### This is a basic project showcasing Deezer API integration, basic data handling and view rendering. 
 <br/>
 
 ## Deezer is an internet-based music streaming service. 
