@@ -1,3 +1,47 @@
-<p>hello</p>
+<ng-container *ngIf="artistView$ | async as artistView">
+    <div class="artist-container">
+        <ng-container *ngIf="artistView?.artist as artist">
+            <ng-container *ngTemplateOutlet="artistTemplate, context: {$implicit: artist}"></ng-container>
+        </ng-container>
+        <ng-container *ngIf="artistView?.tracks as tracks"></ng-container>
+    </div>
+</ng-container>
 
-<router-outlet></router-outlet>
+<ng-template #artistTemplate let-artist>
+    <div class="arist-image">
+        <img [src]="artist?.picture_xl" [alt]="artist?.name">
+    </div>
+    <h1>{{ artist?.name }}</h1>
+    <ng-container *ngIf="(artistView$ | async)!.albums as albums">
+        <h2>Albums:</h2>
+        <ng-container *ngTemplateOutlet="albumsTemplate, context: {$implicit: albums}"></ng-container>
+    </ng-container>
+    <ng-container *ngIf="(artistView$ | async)!.tracks as tracks">
+        <h2>Tracks:</h2>
+        <ng-container *ngTemplateOutlet="tracksTemplate, context: {$implicit: tracks}"></ng-container>
+    </ng-container>
+    
+</ng-template>
+
+<ng-template #albumsTemplate let-albums>
+    <div class="album-container">
+        <ng-container *ngFor="let album of albums?.slice(0, 5)">
+            <div class="album-list-item">
+                <span class="album-name">{{album?.title}}</span>
+                <span class="album-cover" [style.background-image]="'url(' + album?.cover_small + ')'"></span>
+                <span class="album-date">{{album?.release_date | date:'yyyy'}}</span>
+            </div>
+        </ng-container>
+    </div>
+</ng-template>
+
+<ng-template #tracksTemplate let-tracks>
+    <div class="track-container">
+        <ng-container *ngFor="let track of tracks">
+            <div class="track-list-item">
+                <span class="track-name">{{track?.title}}</span>
+                <span class="track-date">{{track?.duration}}</span>
+            </div>
+        </ng-container>
+    </div>
+</ng-template>

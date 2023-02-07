@@ -1,9 +1,12 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { map, Observable, of } from "rxjs";
+import { forkJoin, map, Observable, of } from "rxjs";
 import { DeezerData } from "../models/deezer-data.model";
 import { Editorial } from "../models/editorial.model";
 import { Artist } from "../models/artist.model";
+import { Album } from "../models/album.model";
+import { Track } from "../models/track.model";
+import { ArtistView } from "../models/artist-view.model";
 
 @Injectable({
     providedIn: 'root'
@@ -34,7 +37,32 @@ export class DeezerProxyService {
             )
     }
 
-    public queryArtist(artistName: string) {
-        return this.httpClient.get(`https://api.deezer.com/search?q=artist:"${artistName}`)
+    private queryArtistInfoByID(id: string): Observable<Artist> {
+        return this.httpClient.get<Artist>(`https://api.deezer.com/artist/${id}`)
+    }
+    private queryArtistAlbumsByID(id: string): Observable<DeezerData<Album[]>> {
+        return this.httpClient.get<DeezerData<Album[]>>(`https://api.deezer.com/artist/${id}/albums`);
+    }
+    private queryArtistTracksByID(id: string): Observable<DeezerData<Track[]>> {
+        return this.httpClient.get<DeezerData<Track[]>> (`https://api.deezer.com/artist/${id}/top`);
+    }
+
+    public getArtistView(id: string): Observable<ArtistView> {
+        const combinedObservables = [];
+        combinedObservables.push(this.queryArtistInfoByID(id));
+        combinedObservables.push(this.queryArtistAlbumsByID(id));
+        combinedObservables.push(this.queryArtistTracksByID(id));
+        return forkJoin(combinedObservables).pipe(
+            map((response: (Artist | DeezerData<Album[]> | DeezerData<Track[]>)[]) => {
+                const artist = response[0] as Artist; 
+                const deezerAlbums = response[1] as DeezerData<Album[]>; 
+                const deezerTracks = response[2] as DeezerData<Track[]>; 
+                return { 
+                    artist: artist,
+                    albums: deezerAlbums.data,
+                    tracks: deezerTracks.data
+                 }
+            })
+        )
     }
 }

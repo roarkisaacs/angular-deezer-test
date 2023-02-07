@@ -23,7 +23,7 @@ export class ArtistCardComponent implements OnInit {
 
   viewArtist(artistId: number): void {
     if (artistId) {
-      this.router.navigate([`/artist/${artistId}`]);
+      this.router.navigate([`/artist/${artistId}`], { relativeTo: this.route}).then(result => console.log(result));
     }
   }
 }

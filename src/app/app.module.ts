@@ -23,6 +23,7 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 import { InterceptorService } from './services/interceptor/interceptor.service';
 import { ErrorHandlerService } from './services/error-handler/error-handler.service';
 import { ArtistCardComponent } from './artist-card/artist-card.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -31,14 +32,14 @@ import { ArtistCardComponent } from './artist-card/artist-card.component';
     ArtistComponent,
     EditorialComponent,
     SearchResultsComponent,
-    ArtistCardComponent
+    ArtistCardComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    RouterModule,
     AppRoutingModule,
     MatIconModule,
     FormsModule,

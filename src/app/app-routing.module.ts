@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import { ArtistComponent } from './artist/artist.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: '', component: AppComponent, pathMatch: 'full', },
+  { path: '', pathMatch:'full', redirectTo: '/home'},
+  { path: 'home', component: HomeComponent},
   { path: 'artist/:id', component: ArtistComponent, pathMatch: 'full' },
-  { path: 'artist', component: ArtistComponent },
   { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [CommonModule, RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
