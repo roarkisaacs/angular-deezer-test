@@ -21,6 +21,10 @@
 
 Assessment can be viewed here - https://main--admirable-marzipan-ba9653.netlify.app
 
+<br />
+
+A quick CI pipeline was set up with Netlify so that any merge into the main branch would kick off an automatic build and deploy to the above site. 
+
 ## IMPORTANT
 
 Requests go directly to https://api.deezer.com and do not have the Access-Control-Allow-Origin header appended to the requests. Use https://cors-anywhere.herokuapp.com/corsdemo to bypass this and run the demo.
