@@ -19,6 +19,8 @@
 
 <br />
 
+Assessment can be viewed here - https://main--admirable-marzipan-ba9653.netlify.app
+
 ## IMPORTANT
 
 Requests go directly to https://api.deezer.com and do not have the Access-Control-Allow-Origin header appended to the requests. Use https://cors-anywhere.herokuapp.com/corsdemo to bypass this and run the demo.
